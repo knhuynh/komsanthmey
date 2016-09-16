@@ -1,0 +1,35 @@
+/* Custom template */
+
+/* theme.css */
+.scrollToTop, .pagination_area ul li a:hover{background-color:#e7336b} /*:1*/
+.scrollToTop:hover, .scrollToTop:focus, .pagination_area ul li a{color:#e7336b; border-color:1px solid #e7336b} /*:2*/
+.top_nav li a:hover{color:#e7336b} /*:3*/
+.search_form input[type="submit"]:hover {background-color:#e7336b} /*:4*/
+.navbar-default{background-color:#e7336b; border-color:#e7336b} /*:5-*/
+.custom_nav li a:hover{border-color:#e7336b}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus{color:#e7336b; border-color:#e7336b}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus{color:#e7336b; border-color:#e7336b}
+.navbar-nav > li > .dropdown-menu{background-color:#e7336b}
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus{color:#e7336b; border-color:#e7336b} /*-:10*/
+.slick-prev, .slick-next{background-color:#e7336b} /*:13*/
+.bold_line span {background-color:#e7336b} /*:15-*/
+.catg1_nav li .post_titile a:hover {color:#e7336b}
+.content_middle_middle:after{background-color:#e7336b}
+.content_middle_middle:before{background-color:#e7336b}
+.single_featured_slide > h2 a:hover {color:#e7336b}
+.catg_titile a:hover {color:#e7336b}
+.media-heading a:hover {color:#e7336b}
+span.meta_date:hover, span.meta_comment:hover, span.meta_more:hover, span.meta_comment a:hover, span.meta_more a:hover{color:#ee577c}
+.single_bottom_rightbar > h2{border-bottom:3px solid #e7336b} /*-:23*/
+.nav-tabs {border-bottom:1px solid #e7336b} /*:24-*/
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus{color:#e7336b}
+.nav-tabs > li.active > a:hover{color:#e7336b !important}
+.nav-tabs > li > a:hover{background-color:#e7336b; color:#fff !important} /*-:27*/
+.single_bottom_rightbar ul li a:hover {color:#e7336b} /*:28*/
+.labels_nav li a:hover {background-color:#ee577c} /*:29*/
+.single_footer_top > h2 {color:#e7336b} /*:49*/
+
+/* style.css */
+.search_form input[type="text"] {border:1px solid #e6e6e6; border-right:0; margin-bottom:3px; outline-style:none} /*:41*/
+.search_form input[type="submit"] {background-color:#e7336b; float:right; height:29px; width:29px; margin-top:-0.5px} /*:42*/
+.logo > strong{color:#e7336b} /*:47*/
