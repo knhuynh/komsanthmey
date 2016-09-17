@@ -30,6 +30,6 @@ span.meta_date:hover, span.meta_comment:hover, span.meta_more:hover, span.meta_c
 .single_footer_top > h2 {color:#e7336b} /*:49*/
 
 /* style.css */
-.search_form input[type="text"] {border:1px solid #e6e6e6; border-right:0; margin-bottom:3px; outline-style:none} /*:41*/
+.search_form input[type="text"] {border:1px solid #e6e6e6; margin-bottom:3px; outline-style:none} /*:41*/
 .search_form input[type="submit"] {background-color:#e7336b; float:right; height:29px; width:29px; margin-top:-0.5px} /*:42*/
 .logo > strong{color:#e7336b} /*:47*/
