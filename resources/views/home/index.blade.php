@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title') Home page - @parent @stop
+@section('title') @parent - Home page @stop
 
 @extends('layouts.header')
 
@@ -10,9 +10,11 @@
     <div class="col-lg-6 col-md-6 col-sm6">
       <div class="latest_slider">
         <div class="slick_slider">
-          <div class="single_iteam"><img src="images/550x330x1.jpg" alt="">
-            <h2><a class="slider_tittle" href="pages/single.html">Fusce eu nulla semper porttitor felis sit amet</a></h2>
+          @foreach($latestNews as $news)
+          <div class="single_iteam"><img src="upload/images/{{$news->image}}" alt="">
+            <h2><a class="slider_tittle" href="pages/single.html">{{ str_limit($news->title, 45, ' . . . ') }}</a></h2>
           </div>
+          @endforeach
           <div class="single_iteam"><img src="images/550x330x2.jpg" alt="">
             <h2><a class="slider_tittle" href="pages/single.html">Fusce eu nulla semper porttitor felis sit amet</a></h2>
           </div>

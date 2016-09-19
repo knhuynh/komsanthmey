@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 use App\Http\Requests;
-use App\Http\Controllers\NewsController as News;
+use App\News;
+use URL;
 
-class HomeController extends Controller
+class NewsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +18,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $latestNews = News::latest(6);
-        return view('home.index', array('latestNews' => $latestNews));
+        //
     }
 
     /**
@@ -84,5 +85,22 @@ class HomeController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+    * Get list news latest.
+    * @param int $offset
+    * @return \Illuminate\Http\Response
+    */
+    public static function latest($offset)
+    {
+        if(!empty($offset) && is_numeric($offset)) {
+            $listNews = News::where('status', '=', 1)
+                            ->orderBy('created_at', 'DESC')
+                            ->offset(0)->limit($offset)->get();
+            return $listNews;
+        } else {
+            return Redirect::to(URL::previous());
+        }
     }
 }

@@ -47,7 +47,7 @@
       <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
           <div class="footer_bottom_left">
-            <p>Copyright &copy; 2045 <a href="index.html">magExpress</a></p>
+            <p>Copyright &copy; 2016 <a href="index.html">komsanThmey</a></p>
           </div>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
