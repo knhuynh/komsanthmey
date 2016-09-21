@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Validator;
 
 use App\Http\Requests;
 use App\News;
@@ -94,13 +95,19 @@ class NewsController extends Controller
     */
     public static function latest($offset)
     {
-        if(!empty($offset) && is_numeric($offset)) {
+        $data = array('offset' => $offset);
+        $validator = Validator::make($data,
+            array('offset' => 'required|numeric')
+        );
+        
+        if ($validator->fails()) {
+            return Redirect::to(URL::previous());
+        } else {
             $listNews = News::where('status', '=', 1)
                             ->orderBy('created_at', 'DESC')
                             ->offset(0)->limit($offset)->get();
             return $listNews;
-        } else {
-            return Redirect::to(URL::previous());
         }
+
     }
 }
