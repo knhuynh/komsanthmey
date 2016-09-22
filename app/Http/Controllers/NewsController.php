@@ -93,19 +93,27 @@ class NewsController extends Controller
     * @param int $offset
     * @return \Illuminate\Http\Response
     */
-    public static function latest($offset)
+    public static function latest($offset, $limit)
     {
-        $data = array('offset' => $offset);
-        $validator = Validator::make($data,
-            array('offset' => 'required|numeric')
-        );
-        
+        $input = [
+            'offset' => $offset,
+            'limit' => $limit
+        ];
+
+        $rules = [
+            'offset' => 'required|numeric',
+            'limit' => 'required|numeric'
+        ];
+
+        $validator = Validator::make($input, $rules);
+
         if ($validator->fails()) {
-            return Redirect::to(URL::previous());
+
+            return Redirect::to(URL::previous())->withErrors($validator);
         } else {
             $listNews = News::where('status', '=', 1)
                             ->orderBy('created_at', 'DESC')
-                            ->offset(0)->limit($offset)->get();
+                            ->offset($offset)->limit($limit)->get();
             return $listNews;
         }
 

@@ -5,16 +5,25 @@
 @extends('layouts.header')
 
 @section('content')
+
+@if($errors->has())
+  @foreach($errors->all() as $error)
+    <div>{{$error}}</div>
+  @endforeach
+@endif
+
 <div class="content_top">
   <div class="row">
     <div class="col-lg-6 col-md-6 col-sm6">
       <div class="latest_slider">
         <div class="slick_slider">
-          @foreach($latestNews as $news)
+          @if(isset($sliders))
+          @foreach($sliders as $news)
           <div class="single_iteam"><img src="upload/images/{{$news->image}}" alt="">
             <h2><a class="slider_tittle" href="pages/single.html">{{ str_limit($news->title, 45, ' . . . ') }}</a></h2>
           </div>
           @endforeach
+          @endif
           <div class="single_iteam"><img src="images/550x330x2.jpg" alt="">
             <h2><a class="slider_tittle" href="pages/single.html">Fusce eu nulla semper porttitor felis sit amet</a></h2>
           </div>

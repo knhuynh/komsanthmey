@@ -16,8 +16,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $latestNews = News::latest(6);
-        return view('home.index', array('latestNews' => $latestNews));
+        $sliders = News::latest(0, 6);
+        return view('home.index', array('sliders' => $sliders));
     }
 
     /**
