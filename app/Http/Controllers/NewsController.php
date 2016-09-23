@@ -108,8 +108,8 @@ class NewsController extends Controller
         $validator = Validator::make($input, $rules);
 
         if ($validator->fails()) {
-
-            return Redirect::to(URL::previous())->withErrors($validator);
+            // return Redirect::to(URL::previous())->withErrors($validator);
+            return array('validator' => $validator);
         } else {
             $listNews = News::where('status', '=', 1)
                             ->orderBy('created_at', 'DESC')

@@ -17,7 +17,7 @@
     <div class="col-lg-6 col-md-6 col-sm6">
       <div class="latest_slider">
         <div class="slick_slider">
-          @if(isset($sliders))
+          @if(!is_null($sliders))
           @foreach($sliders as $news)
           <div class="single_iteam"><img src="upload/images/{{$news->image}}" alt="">
             <h2><a class="slider_tittle" href="pages/single.html">{{ str_limit($news->title, 45, ' . . . ') }}</a></h2>

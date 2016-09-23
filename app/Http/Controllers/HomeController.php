@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 use App\Http\Requests;
 use App\Http\Controllers\NewsController as News;
@@ -17,7 +18,12 @@ class HomeController extends Controller
     public function index()
     {
         $sliders = News::latest(0, 6);
-        return view('home.index', array('sliders' => $sliders));
+        $validator = null;
+        if(is_array($sliders)) {
+        	$validator = $sliders['validator'];
+        	$sliders = null;
+        }
+        return view('home.index', array('sliders' => $sliders))->withErrors($validator);
     }
 
     /**
